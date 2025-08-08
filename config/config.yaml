@@ -1,0 +1,23 @@
+data:
+  date_column: periode
+  target_column: permohonan_kia
+  lags: [1, 2, 3, 6, 12]
+  rollings: [3, 6, 12]
+  holiday_country: ID
+
+training:
+  holdout_months: 4
+  min_train_rows: 18
+
+model:
+  xgb_params:
+    n_estimators: 300
+    learning_rate: 0.05
+    max_depth: 4
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    tree_method: auto
+
+forecast:
+  horizon: 6
